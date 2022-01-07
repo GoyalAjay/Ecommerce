@@ -1,0 +1,50 @@
+.tooltip1
+{
+    position: relative;
+    display: inline-block;
+}
+.tooltip1-title:hover
+{
+    text-decoration: none
+}
+.tooltip1 .tooltiptext
+{
+    visibility: hidden;
+    width: 220px;
+    background-color: white;
+    color: black;
+    /*text-align: center;*/
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    left: 110%;
+    margin-left: -105px;
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip1 .tooltiptext::after
+{
+    content: "";
+    align-content: center;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.tooltip1:hover .tooltiptext
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+a.product-link:hover
+{
+    text-decoration: none;
+}

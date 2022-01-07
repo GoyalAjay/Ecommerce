@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base_head %}
+    {% if object_list.count <= 3 %}
+        <style type="text/css">
+            @media only screen and (min-width: 1370px)
+            {
+                .footer
+                {
+                    position: absolute!important;
+                }
+            }
+            .footer
+            {
+                position: relative;
+            }
+        </style>
+    {% else %}
+        <style type="text/css">
+            .footer
+            {
+                position: relative;
+            }
+        </style>
+    {% endif %}
+    <!-- Product Card CSS -->
+    <link type="text/css" rel="stylesheet" href='{% static "css/product_card.css" %}' />
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for obj in object_list %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+        	        {% include 'products/snippets/card.html' with instance=obj %}
+                </div>
+            {% endfor %}
+        </div>
+    </div></div>
+{% endblock %}
+{% block javascript %}
+    <script>
+        $(function()
+        {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+{% endblock %}

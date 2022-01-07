@@ -1,0 +1,25 @@
+.card
+{
+    width: 18rem;
+}
+
+.card-heading
+{
+    height: 280px;
+}
+
+.card-img-top
+{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.card-title
+{
+    max-width: 15.4rem;
+}
+
+.card-button
+{
+    width: 97%;
+}

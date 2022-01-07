@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="container col-lg-8 col-md-9 col-sm-12" >
+        <form class="col-lg-7 mx-auto border rounded-lg bg-white" style="height: 590px;" method="POST" action="{% url 'contact' %}"> {% csrf_token %}
+            <h1 class='text-center'>{{ title }}</h1>
+            <div class="form-group">
+                {{ form|crispy }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+
+                    <!-- <form method="POST"> {% csrf_token %}
+                        <input type="text" class="form-control" placeholder="Name" name="fullname">
+                        <input type="email" class="form-control" placeholder="Email" name="email">
+                        <textarea name="content" class="form-control"placeholder="Your Content"></textarea>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form> -->
+        </div>
+    </div>
+{% endblock %}

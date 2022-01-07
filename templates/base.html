@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>eShoppers</title>
+        {% include 'base/css.html' %}
+        {% block base_head %}{% endblock %}
+    </head>
+    <body>
+        {% include 'base/navbar.html' with brand_name='Eshopper' %}
+
+        {% if messages %}
+            <div class="container">
+                {% for message in messages %}
+                    {% if message.tags == "error" %}
+                        <div class="alert alert-danger alert-dismissible messages">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <span class="{{ message.tags }}">
+                                <b>Error: </b>
+                                {{ message }}<br/>
+                            </span>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible messages">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <span class="{{ message.tags }}">
+                                {{ message }}<br/>
+                            </span>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% block content %}{% endblock %}
+        {% block footer %}
+            {% include 'footer.html' %}
+        {% endblock %}
+        {% include 'base/js.html' %}
+        {% block javascript %}{% endblock %}
+    </body>
+</html>

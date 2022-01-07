@@ -1,0 +1,11 @@
+{% load static %}
+
+<a href="{{ instance.get_absolute_url }}">
+    <div class="images">
+        {% if instance.image %}
+            <img class="content border rounded-lg m-0 p-0" src="{{ instance.image.url }}" alt="{{ instance.title }}" height="80px">
+        {% else %}
+            <img class="content border rounded-lg m-0 p-0" src="{% static 'img/no_image.jpg' %}" class="img-fluid" alt="{{ instance.title }}">
+        {% endif %}
+    </div>
+</a>

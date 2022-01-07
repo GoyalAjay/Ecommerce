@@ -1,0 +1,15 @@
+{% load static %}
+
+{% if object_list is not None %}
+
+    <h3>Recently Viewed</h3>
+    <div class="menu-wrapper rounded-lg border m-0 p-0 col-lg-12 col-md-12 col-sm-12 ">
+        <ul class="menu m-0 p-0" id="menu">
+            {% for obj in object_list %}
+                <li class="item text-center m-1 p-0">
+                    {% include 'products/snippets/recent-history.html' with instance=obj.content_object %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

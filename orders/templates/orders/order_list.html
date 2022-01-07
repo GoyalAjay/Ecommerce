@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block base_head %}
+    {% for object in object_list %}
+        {% if forloop.counter >= 11 %}
+            <style type="text/css">
+                .footer
+                {
+                    position: relative;
+                }
+            </style>
+        {% else %}
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Your Orders</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table text-left">
+                    <thead><th>Order Id</th><th>Shipping Status</th><th>Order Placed</th><th>Total</th></thead>
+                    <tbody>
+                        {% for object in object_list %}
+                            <tr>
+                                <td><a href="{{ object.get_absolute_url }}">{{ object.order_id }}</a></td>
+                                <td>{{ object.get_status }}</td>
+                                <td>{{ object.cart.timestamp|date:'l, d M, Y' }}</td>
+                                <td>&#8377; {{ object.total }}</td>
+                            </tr>
+                            {% empty %}
+                                <tr><td colspan="3"><p class="lead">No Orders yet.</p></td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

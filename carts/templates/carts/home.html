@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+<title>Cart</title>
+
+{% block content %}
+    <div class="container p-0">
+        {% if cart.products.exists %}
+            <h1>Cart</h1>
+            <table class="table table-sm table-hover cart-table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th style="width: 15%;" scope="col">Product Image</th>
+                        <th scope="col">Product Name</th>
+                        <th style="width: 10%;" scope="col">Quantity</th>
+                        <th style="width: 15%;" scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody class="cart-body">
+                    {% for product in cart.products.all %}
+                        <tr class="cart-products">
+                            <th scope="row">
+                                <div class="my-3">
+                                    {{ forloop.counter }}
+                                </div>
+                            </th>
+                            <td>
+                                <div class="p-0">
+                                    {% if product.image %}
+                                        <img src="{{ product.image.url }}" class="img-fuild rounded-lg mx-4" height="94px" width="94px" />
+                                    {% else %}
+                                        <img class="rounded-lg mx-4" src="{% static 'img/no_image.jpg' %}" height="94px" width="94px" />
+                                    {% endif %}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="my-3">
+                                    <a class="title" href="{{ product.get_absolute_url }}">
+                                        <b style="color:black;">{{ product.title }}</b>
+                                    </a>
+                                    {% include 'carts/snippets/remove-product.html' with product_id=product.id %}
+                                </div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="my-3">
+                                    &#8377;{{ product.price }}
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="3"></td>
+                        <td><b>Subtotal</b></td>
+                        <td colspan="1">&#8377;<span class="cart-subtotal">{{ cart.subtotal }}</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td><b>Total</b></td>
+                        <td colspan="1">&#8377;<span class="cart-total">{{ cart.total }}</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td></td>
+                        <td colspan="1"><a class="btn btn-lg btn-success" href="{% url 'cart:checkout' %}">Checkout</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="cart-item-remove-form" style="display: none;">
+                {% include 'carts/snippets/remove-product.html' %}
+            </div>
+        {% else %}
+            <div class="empty-cart-div">
+                <img class="empty-cart" src="{% static 'img/mini-empty-cart.png' %}" alt="shopping-cart">
+            </div>
+            <h1 class="text-center">Looks like you haven't made your choice yet...</h1>     
+        {% endif %}
+    </div>
+{% endblock %}

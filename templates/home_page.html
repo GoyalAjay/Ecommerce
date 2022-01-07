@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+<title>Home Page Template</title>
+
+{% block base_head %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/main.css" %}'>
+    {% if object_list is not None and object_list is not False %}
+        <style type="text/css">
+            .footer
+            {
+                position: relative;
+            }
+        </style>
+    {% else %}
+        <style type="text/css">
+            @media only screen and (min-height: 900px)
+            {
+                .footer
+                {
+                    position: absolute;
+                }
+            }
+        </style>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class='text-center'>
+            <h1>{{ title }}</h1>
+            <h1>Hello, world! we're working</h1>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="{% static 'img/beach.jpg' %}" class="img-fluid" width="35%" height="35%" />
+                <p>{{ content }}</p>
+            </div>
+        </div>
+        {% if request.user.is_authenticated %}
+            {% include 'products/snippets/recent-history-scroll.html' with instance=obj.content_object %}
+        {% endif %}
+    </div>
+{% endblock %}

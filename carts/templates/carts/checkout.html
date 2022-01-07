@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block base_head %}
+        <style type="text/css">
+            {% if not has_card or not billing_profile %}
+                .footer
+                {
+                    position: absolute!important;
+                }
+            {% endif %}
+            .footer
+            {
+                position: relative;
+            }
+        </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% if not billing_profile %}
+            <div class="row text-center">
+                <div class="col-12 col-md-6" style="border: 1px black solid;">
+                    <p class="lead">Login</p>
+                    {% include 'accounts/snippets/form.html' with form=login_form next_url=request.build_absolute_uri %}
+                </div>
+                <div class="col-12 col-md-6" style="border: 1px black solid;">
+                    <p>Continue as Guest</p>
+                    {% url "guest_register" as guest_register_url %}
+                    {% include 'accounts/snippets/form.html' with form=guest_form next_url=request.build_absolute_uri action_url=guest_register_url %}
+                </div>
+            </div>
+        {% else %}
+            {% if not object.shipping_address and shipping_address_required %}
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="heading">Shipping Address</h1>
+                        <hr/>
+                    </div>
+                    <div class="col-lg-6 mx-auto">
+                        
+                        {% url "checkout_address_create" as checkout_address_create %}
+
+                        {% include 'addresses/snippets/form.html' with form=address_form next_url=request.build_absolute_uri action_url=checkout_address_create address_type='shipping' %}
+                    </div>
+                    {% if address_qs is not None %}
+                        <div class="col-6">
+                            {% url "checkout_address_reuse" as checkout_address_reuse %}
+                            {% include 'addresses/snippets/prev_addresses.html' with address_qs=address_qs next_url=request.build_absolute_uri address_type='shipping' action_url=checkout_address_reuse %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% else %}
+                {% if not has_card %}
+                    <!-- enter your card here -->
+                    <div class="stipe-payment-form" data-token="{{ publish_key }}" data-next-url="{{ request.build_absolute_uri }}" data-btn-title="Add Payment Method"></div>
+                {% else %}
+                    {% include 'carts/finalize_checkout.html' with billing_profile=object.biling_profile cart=object.cart address=object.shipping_address  %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

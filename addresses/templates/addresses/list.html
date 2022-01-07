@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class='row'>
+            <div class='col-12'>
+                <h1>Your Address{% if object_list.count > 1%}es{% endif %}</h1>
+                <hr class="mb-0" />
+            </div>
+        </div>
+        <div class='row mx-auto address-content mt-5'>
+            <div class="d-inline add-button rounded-lg col-lg-4 mb-4 ml-3 p-0 mr-3 col-md-6 col-sm-6.5" style="">
+                <a href='{% url "address-create" %}' class="text-decoration-none">
+                    <div class="add-address text-center" style="">
+                        <i class="fa fa-plus plus" aria-hidden="true"></i>
+                        <h5 class="font-weight-bolder text-muted">Add Address</h5>
+                    </div>
+                </a>
+            </div>
+            {% for obj in object_list %}
+                <div class="d-inline address border rounded-lg ml-3 mr-3 shadow p-3 mb-4 bg-white rounded col-lg-4 col-md-6 col-sm-6.5" style="">
+                    <h6 class="m-0 ml-4 mb-0 p-0">Default: <b>eShoppers</b></h6>
+                    <hr class="mt-2" />
+                    <h5 class="font-weight-bolder ml-4">{{ obj.billing_profile.user.full_name }}</h5>
+                    <p class="m-0 ml-4">{{ obj.address_line_1 }}</p>
+                    <p class="m-0 ml-4">
+                        {% if obj.address_line_2 != None %}{{ obj.address_line_2 }}{% endif %}
+                    </p>
+                    <p class="m-0 ml-4">
+                        {{ obj.city }}, {{ obj.state }} {{ obj.postal_code }}
+                    </p>
+                    <p class="m-0 ml-4">{{ obj.country }}</p>
+                    <p class="m-0 ml-4">Phone Number: {{ obj.billing_profile.user.phone_number }}</p>
+                    <div class="mt-2">
+                        <a href='{{ obj.get_absolute_url }}' class='link d-inline edit mr-2' style="">Edit</a>
+                        |
+                        <a href='{{ obj.remove_address }}' class='link d-inline remove ml-2'>Remove</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

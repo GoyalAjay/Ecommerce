@@ -1,0 +1,55 @@
+@media only screen and (min-height: 900px)
+{
+    div#container
+    {
+        margin-top: 70px;
+        height: 50% !important;
+    }
+    a#button
+    {
+        margin-top: 36px !important;
+    }
+    div.data
+    {
+        margin-top: 70px;
+    }
+}
+@media only screen and (min-height: 900px)
+{
+    a#button
+    {
+        margin-top: 36px !important;
+    }
+}
+@media only screen and (min-height: 900px)
+{
+    div.data
+    {
+        margin-top: 40px !important;
+    }
+}
+div#container
+{
+    margin-top: 70px;
+    height: 400%;
+}
+div#content
+{
+    height: 100% !important;
+}
+
+dd
+{
+    font-size: 14px;
+}
+
+a#button
+{
+    margin-top: 16px;
+}
+
+
+.d-flex
+{
+    height: 25% !important;
+}

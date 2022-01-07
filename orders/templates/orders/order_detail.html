@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row head align-items-center border border-bottom-0 rounded-top bg-light col-lg-12 col-md-12 col-sm-12 m-0 p-0">
+            <div class="d-inline head-content col-lg-3 col-md-6 col-sm-6 my-3">
+                <p class="font-weight-bolder m-0">ORDER PLACED:</p>
+                <p class="m-0">{{ object.cart.timestamp|date:'l, d M, Y' }}</p>
+            </div>
+            <div class="d-inline head-content col-lg-3 col-md-6 col-sm-6 my-3">
+                <p class="m-0">SHIP TO</p>
+                <div class="tooltip1 m-0">
+                    <a href="" class="tooltip1-title">{{ request.user.full_name }}</a>
+                    <span class="tooltiptext border rounded-lg">
+                        <p class="font-weight-bolder m-0 ml-3">{{ request.user.full_name }}</p>
+                        {% if object.shipping_address.get_address != None %}
+                            <p class="m-0 ml-3">{{ object.shipping_address.address_line_1 }}</p>
+                            <p class="m-0 ml-3">
+                                {% if object.shipping_address.address_line_2 != None %}{{ object.shipping_address.address_line_2 }}{% endif %}
+                            </p>
+                            <p class="m-0 ml-3">{{ object.shipping_address.city }}, {{ object.shipping_address.state }} {{ object.shipping_address.postal_code }}</p>
+                            <p class="m-0 ml-3">{{ object.shipping_address.country }}</p>
+                        {% else %}
+                        <p class="m-0 ml-3">It's a Digital Product. You can download it from the Library.</p>
+                        {% endif %}
+                        <p class="m-0 ml-3 mt-2">Phone: {{ request.user.phone_number }}</p>
+                    </span>
+                </div>
+            </div>
+            <div class="d-inline head-content col-lg-3 col-md-6 col-sm-6 my-3">
+                <p class="m-0">TOTAL</p>
+                <p class="m-0">&#8377;{{ object.total }}</p>
+            </div>
+            <div class="d-inline head-content col-lg-3 col-md-6 col-sm-6 my-3">
+                <p class="order-id">Order #{{ object.order_id }}</p>
+            </div>
+        </div>
+        <div class="row order-content border rounded-bottom col-lg-12 col-md-12 col-sm-12 m-0 p-0">
+
+            <div class="col-lg-12 col-md-6 mx-auto">
+
+                {% if object.total >= 500|add:"0" %}
+                    {% for product in object.cart.products.all %}
+                        <div class="col-lg-6">
+                            <div class="d-inline col-lg-3">
+                                {% if product.image %}
+                                    <img src="{{ product.image.url }}" class="img-fuild mt-4 border rounded-lg" height="94px" width="94px" />
+                                {% else %}
+                                    <img class="img-fuild mt-4 border rounded-lg" src="{% static 'img/no_image.jpg' %}" height="94px" width="94px" />
+                                {% endif %}
+                            </div>
+                            <div class="d-inline col-lg-3">
+                                <a class="product-link" href="{{ product.get_absolute_url }}">{{ product }}</a>
+                                {% if not forloop.last %}<br/>{% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <p class="m-0 mt-4 mb-2"> Shipping total: <b>Free Delivery</b></p>
+                    <p>Order status: {{ object.get_status }}</p>
+                {% else %}
+                    {% for product in object.cart.products.all %}
+                        <div class="col-lg-6">
+                            <div class="d-inline col-lg-3">
+                                {% if product.image %}
+                                    <img src="{{ product.image.url }}" class="img-fuild mt-4 border rounded-lg" height="94px" width="94px">
+                                {% else %}
+                                    <img class="img-fuild mt-4 border rounded-lg" src="{% static 'img/no_image.jpg' %}" height="94px" width="94px" />
+                                {% endif %}
+                            </div>
+                            <div class="d-inline col-lg-3">
+                                <a class="product-link" href="{{ product.get_absolute_url }}">{{ product }}</a>
+                                {% if not forloop.last %}<br/>{% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <p class="m-0 mt-4 mb-2"> Shipping charges: &#8377;{{ object.shipping_total }}</p>
+                    <p>Order status: {{ object.get_status }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

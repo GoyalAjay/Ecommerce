@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block base_head %}
+    {% if object_list is not None %}
+        <style type="text/css">
+            .footer
+            {
+                position: relative;
+            }
+        </style>
+    {% else %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% if object_list is not None %}
+            <div class="row">
+                {% for obj in object_list %}
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        {% include 'products/snippets/card.html' with instance=obj.content_object %}
+                    </div>
+                {% endfor %}
+            </div>
+            {% include 'products/snippets/recent-history-scroll.html' with instance=obj.content_object %}
+        {% else %}
+            <div class="row">
+                <div class="mx-auto" style="margin-top: 150px;margin-bottom: 50px;">
+                    <h1>You don't have any history</h1>
+                </div>
+            </div>
+        {% endif %}
+    </div></div>
+{% endblock %}

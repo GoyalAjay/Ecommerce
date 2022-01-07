@@ -1,0 +1,137 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "T-Shirt",
+        "slug": "t-shirt",
+        "description": "This is a really cool t-shirt. Buy it!",
+        "price": "300.00",
+        "image": "products/13956620958/13956620958.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2020-07-01T13:54:48.513Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Hat",
+        "slug": "hat",
+        "description": "It's an awesome hat.",
+        "price": "100.00",
+        "image": "products/13174325334/13174325334.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2020-07-01T13:54:48.513Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "title": "AMD Threadripper 3990x",
+        "slug": "high_end_cpu",
+        "description": "64 Cores & 128 Threads\r\nBase Clock: 2.9GHz, Max Boost Clock: up to 4.3GHz, 288MB Cache, TDP: 280W\r\nSystem Memory Specification: 3200MHz, System Memory Type: DDR4, Memory Channels: 4\r\nSocket: sTRX4, Motherboard Compatibility: AMD TRX40 chipset based motherboards\r\nGraphics: Separate Graphics Card is required, Heatsink Fan: Not included in the box, Warranty: 3 Years",
+        "price": "400000.00",
+        "image": "products/16938942918/16938942918.jpg",
+        "featured": true,
+        "active": true,
+        "timestamp": "2020-07-01T13:54:48.513Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "title": "T-Shirt",
+        "slug": "t-shirt-wwao",
+        "description": "Another one......",
+        "price": "500.00",
+        "image": "products/33366033065/33366033065.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2020-07-01T13:54:48.513Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+        "title": "lorem ipsum",
+        "slug": "lorem-ipsum",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet dolor dolor, et fermentum erat cursus sed. Ut sed luctus felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque fermentum, turpis in mollis consequat, ex quam egestas erat, vel posuere elit justo a enim. Nam auctor velit sed imperdiet luctus. Aenean sit amet vestibulum leo, id faucibus ante. Sed ut facilisis sapien, sed mattis felis. Sed aliquam egestas nisi sit amet accumsan.\r\n\r\nEtiam pellentesque, augue in venenatis hendrerit, lectus ex fringilla ipsum, a sodales ipsum ex quis arcu. Sed pellentesque felis sed nunc consectetur placerat. Sed scelerisque vulputate mattis. Integer eget lectus nisi. Vivamus at cursus metus. Sed lacus libero, laoreet sit amet nisl in, ultricies lacinia dolor. Vestibulum in vehicula purus. Suspendisse bibendum mauris id massa cursus, non ullamcorper purus rutrum. Pellentesque interdum id magna eu scelerisque. Nullam fermentum ante a orci interdum dapibus. Nam bibendum posuere urna, ut aliquet tortor facilisis in. Curabitur eu dui faucibus mi lobortis iaculis. Quisque pharetra, ligula quis fringilla fermentum, dolor ante malesuada dui, eu dignissim risus enim eget magna. Phasellus vel leo eleifend, vestibulum leo eu, blandit purus. Phasellus id vestibulum est.\r\n\r\nQuisque laoreet nisl non tellus rhoncus posuere. Fusce vitae aliquam leo. Sed sodales diam et vestibulum dapibus. Donec sed dolor ipsum. Sed laoreet sollicitudin risus. Curabitur et suscipit ex. Donec non dolor quis augue iaculis auctor at a magna. Phasellus lobortis ac nisi eget imperdiet.\r\n\r\nSuspendisse et convallis ante. Nullam ut ex orci. Cras eget neque quis augue malesuada bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum gravida feugiat nisi, quis facilisis metus consequat ac. Phasellus sodales suscipit sapien vel finibus. Quisque ipsum massa, hendrerit et eros vestibulum, faucibus condimentum elit. Nunc ac fringilla leo. Mauris quis sodales nibh. Nullam posuere consequat enim, id fermentum orci porta quis. Curabitur in interdum lorem. Phasellus vel condimentum lorem. Integer lobortis tempor dolor, sit amet tincidunt metus aliquet id. Sed nec dui nec lacus sodales elementum quis sit amet ante. Suspendisse potenti.\r\n\r\nIn bibendum condimentum nibh, sed gravida lorem scelerisque sit amet. Aenean ac libero aliquet, auctor leo ac, tempus erat. Suspendisse vel pellentesque ante. Aenean ante nunc, mollis nec sodales nec, venenatis in tortor. Integer sed dictum odio, et cursus leo. Mauris sed blandit est. Nullam placerat at diam vitae aliquam. Praesent ultrices ligula sed finibus vestibulum. Morbi sagittis sagittis dui at suscipit. Praesent viverra eleifend purus, at feugiat sem blandit in. Nam venenatis ac ipsum sed gravida. Pellentesque ut diam in nibh interdum sagittis. In pretium scelerisque ipsum ut scelerisque. Mauris malesuada rutrum odio rhoncus cursus. Aliquam et dapibus ex. Pellentesque vel feugiat enim.\r\n\r\nVestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque massa dui, rutrum vitae imperdiet quis, vulputate vel est. Duis sagittis venenatis condimentum. Nam vulputate mauris vel tortor aliquet, et rhoncus enim cursus. Donec sollicitudin fringilla nunc, at mattis turpis tristique quis. In sagittis, quam sit amet tempus lacinia, metus ipsum facilisis ligula, quis vestibulum mi risus vitae est. Nullam sit amet quam id sapien maximus tristique ac vel ante. Sed vulputate nibh eu dignissim rutrum. Fusce in interdum leo. Duis pellentesque est ut suscipit tempus. Pellentesque vel dapibus nulla, sit amet imperdiet nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur egestas lacus ipsum, id efficitur diam feugiat sed. Ut at justo et orci molestie fringilla. Vivamus convallis et erat sed facilisis. Nam dapibus tortor at justo dictum eleifend.\r\n\r\nProin tristique tortor massa, non aliquam turpis bibendum et. Sed pellentesque neque eget dictum pretium. Ut gravida est sed lacus semper hendrerit. Vestibulum in magna rhoncus, efficitur diam nec, varius velit. Aliquam vehicula mauris non sapien iaculis tempus. Pellentesque blandit tincidunt orci, in gravida dui pulvinar non. Curabitur vel ex nec mauris pretium vehicula quis ac libero. Donec hendrerit, velit sit amet elementum cursus, quam elit commodo augue, quis condimentum ipsum ante non erat. Donec lacinia accumsan tellus, id faucibus nisl venenatis vel. Donec lectus purus, suscipit id massa ac, elementum mollis magna. Nulla eget diam a leo tempor commodo at vitae risus. Sed blandit vel est nec feugiat. Morbi volutpat sed felis non ullamcorper.\r\n\r\nInteger pellentesque ipsum at erat fermentum, quis sollicitudin urna imperdiet. Pellentesque euismod quis est id faucibus. Nam bibendum diam eu consequat consectetur. Cras quam nunc, dapibus sit amet semper ac, feugiat id eros. Etiam tincidunt nisl neque, in aliquam lacus vestibulum sit amet. Aenean a accumsan ex, nec posuere magna. Aliquam a risus non ex congue auctor a id arcu. Aliquam mi ligula, bibendum tristique arcu eu, luctus sagittis libero. Donec euismod luctus tortor id ullamcorper. Aliquam a nisl sodales, pharetra libero a, porttitor leo. Phasellus ut dapibus metus. Vestibulum accumsan enim mi, vitae egestas enim mattis vel. Cras eu mattis risus. Etiam eu lorem felis. Praesent vestibulum massa ac iaculis blandit.\r\n\r\nQuisque luctus nunc sit amet turpis gravida, at porta felis fermentum. Aliquam erat volutpat. Donec cursus vulputate venenatis. Phasellus ornare condimentum enim ut congue. In hac habitasse platea dictumst. Donec consequat blandit tortor, sed ultricies erat congue vitae. Cras lobortis mi libero, in cursus est aliquet et. Curabitur ac elit quis purus bibendum pretium. Maecenas ligula elit, dignissim ac enim id, porttitor auctor magna. Ut quis lobortis quam, sed porta lorem. Mauris augue justo, vulputate ac efficitur non, luctus in velit. Praesent tincidunt facilisis pretium. Nam in dapibus ipsum.",
+        "price": "100000.00",
+        "image": "",
+        "featured": true,
+        "active": true,
+        "timestamp": "2020-07-01T13:54:48.513Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+        "title": "Blinding Lights",
+        "slug": "blinding-lightsmp3",
+        "description": "Song by The Weekend",
+        "price": "15.00",
+        "image": "products/23291013687/23291013687.png",
+        "featured": false,
+        "active": true,
+        "timestamp": "2021-03-10T14:00:27.812Z",
+        "is_digital": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "title": "Bitdefender Antivirus",
+        "slug": "antivirus",
+        "description": "5 year 5 devices antivirus",
+        "price": "2999.00",
+        "image": "products/15860019846/15860019846.png",
+        "featured": false,
+        "active": true,
+        "timestamp": "2021-03-10T21:11:05.987Z",
+        "is_digital": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "title": "Music To Be Murdered By - Side B",
+        "slug": "music-to-be-murdered-by-side-b",
+        "description": "Album by Eminem",
+        "price": "2999.00",
+        "image": "products/8638933966/8638933966.png",
+        "featured": false,
+        "active": true,
+        "timestamp": "2021-03-10T21:12:43.967Z",
+        "is_digital": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+        "title": "The Amanda Tape",
+        "slug": "the-amanda-tape",
+        "description": "Album by THEY.",
+        "price": "899.00",
+        "image": "products/7117138625/7117138625.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2021-03-10T21:14:40.866Z",
+        "is_digital": true
+    }
+}
+]

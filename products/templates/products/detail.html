@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 m-0 p-0">
+                {% if object.image %}
+                    <div class="large-5 column">
+                        <div class="xzoom-container">
+                            <img class="xzoom rounded-lg m-0" id="xzoom-default" src="{{ object.image.url }}" xoriginal="{{ object.image.url }}" width="60%" height="60%" />
+                        </div>
+                    </div>
+                {% else %}
+                    <img class="rounded-lg m-0" src="{% static 'img/no_image.jpg' %}" width="60%" height="80%" />
+                {% endif %}
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <h1>{{ object.title }}</h1>
+                {{ object.description|linebreaks }}<br/>
+                Price: &#8377; {{ object.price }}<br/>
+                {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

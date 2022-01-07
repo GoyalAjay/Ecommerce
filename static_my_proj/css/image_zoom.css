@@ -1,0 +1,13 @@
+.xzoom-gallery
+{
+    margin-top: 10px;
+}
+
+.xzoom
+{
+    margin-top: 40px;
+}
+.xzoom-preview
+{
+    box-shadow: -2px 4px 8px 1px rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+}

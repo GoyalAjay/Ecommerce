@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Your Account</h1>
+                <hr/>
+            </div>
+            <div class="col-lg-4 col-md-3 my-3">
+                <a class="card" href='{% url "orders:list" %}'>
+                    <div class="card-body">
+                        <h5 class="card-title">Your Orders</h5>
+                            -Track, return or buy things again
+                  </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-3 my-3">
+                <a class="card" href='{% url "addresses" %}'>
+                    <div class="card-body">
+                        <h5 class="card-title">Addresses</h5>
+                            -Edit or add addresses for orders
+                  </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-3 my-3">
+                <a class="card" href='{% url "billing-payment-method" %}'>
+                    <div class="card-body">
+                            <h5 class="card-title">Payment Options</h5>
+                                -Edit or add payment methods
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-3 my-3">
+                <a class="card" href='{% url "account:login-security" %}'>
+                    <div class="card-body">
+                        <h5 class="card-title">Login & Security</h5>
+                            -Name
+                            -Password Reset
+                  </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-3 my-3">
+                <a class="card" href='{% url "account:history-products" %}'>
+                    <div class="card-body">
+                        <h5 class="card-title">History</h5>
+                            -Products Viewed
+                  </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-3 my-3">
+                <a class="card" href='{% url "marketing-pref" %}'>
+                    <div class="card-body">
+                        <h5 class="card-title">Email alerts</h5>
+                            -Advertising preferences
+                  </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

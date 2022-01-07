@@ -1,0 +1,30 @@
+div#register
+{
+    margin-top: 50px;
+}
+
+form#register-form
+{
+    height: 100%;
+    background-color: white;
+}
+
+h1
+{
+    font-family: 'Actor';
+}
+
+.register
+{
+    margin-bottom: 30px;
+}
+
+div.content
+{
+    margin-top: 50px;
+}
+
+button.signup
+{
+    margin-bottom: 15px;
+}

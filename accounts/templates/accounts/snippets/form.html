@@ -1,0 +1,12 @@
+{% load crispy_forms_tags %}
+<div class="container" >
+    <form class="form ml-auto" method="POST" action="{% if action_url %} {{ action_url }} {% else %}{% url 'login' %} {% endif %}"> {% csrf_token %}
+        {% if next_url %}
+            <input type="hidden" name="next" value="{{ next_url}}">
+        {% endif %}
+        <div class="form-group">
+            {{ form|crispy }}
+        </div>
+        <button type="submit" class="btn btn-outline-success ml-2 mb-3 mb-lg-3 mb-md-3 mb-sm-3" type="submit">Submit</button>
+    </form>
+</div>

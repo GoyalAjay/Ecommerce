@@ -1,0 +1,110 @@
+/*.images
+{
+    display: inline-block;
+    max-width: 20%;
+    margin-top: 30px;
+}
+
+.content
+{
+    margin-right:5px;
+    margin-left:5px;
+    max-height: 175px;
+    max-width: 100%;
+}
+
+.recents
+{
+    position: relative;
+}
+
+.scroll-button-left
+{
+    position: absolute;
+}
+
+.scroll-button-right
+{
+    position: absolute;
+}
+
+.scroll
+{
+    width: 100%;
+    overflow-x:auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background-color: white;
+}*/
+/* Hide scrollbar for Chrome, Safari and Opera */
+/*.scroll::-webkit-scrollbar
+{
+    display: none;
+}*/
+
+/* Hide scrollbar for IE, Edge and Firefox */
+/*.scroll
+{
+    -ms-overflow-style: none;   IE and Edge 
+    scrollbar-width: none;  /* Firefox 
+}*/
+/*input.left-scroll
+{
+    z-index: 25;
+    margin-left: -40px;
+    margin-top: 85px;
+}
+input.left-scroll:focus
+{
+    outline: none;;
+}
+input.right-scroll
+{
+    margin-top: 85px;
+    margin-right: -5px;
+    z-index: 25;
+}
+input.right-scroll:focus
+{
+    outline: none;;
+}*/
+
+.menu-wrapper
+{
+    position: relative;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.menu
+{
+    max-height: 100%;
+    background: white;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.menu::-webkit-scrollbar
+{
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.menu
+{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.item
+{
+    max-height: 100%;
+    display: inline-block;
+}
+
+.content
+{
+    height: 190px;
+    max-width: 100%;
+}

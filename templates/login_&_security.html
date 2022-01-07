@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container" id="container">
+        <div class="container col-6 border rounded-lg px-0 bg-white" id=content>
+            <div class="d-flex justify-content-center border-bottom">
+                <div class="row col-12">
+                    <div class="col-lg">
+                        <a class="btn btn-primary float-right" id="button" href="{% url 'account:update-name' %}">Edit</a>
+                        <div class="data">
+                            <dt>Name:</dt> 
+                            <dd>{{ user.full_name }}</dd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center border-bottom">
+                <div class="row col-12">
+                    <div class="col-lg">
+                        <!-- <a class="btn btn-primary float-right" id="button" href="">Edit</a> -->
+                        <div class="data">
+                            <dt>Email:</dt> 
+                            <dd>{{ user.email }}</dd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center border-bottom">
+                <div class="row col-12">
+                    <div class="col-lg">
+                        <a class="btn btn-primary float-right" id="button" href="{% url 'account:update-phone-number' %}">Edit</a>
+                        <div class="data">
+                            <dt>Phone Number:</dt> 
+                            <dd>{{ user.phone_number }}</dd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="row col-12">
+                    <div class="col-lg">
+                        <a class="btn btn-primary float-right" id="button" href="{% url 'password_change' %}">Edit</a>
+                        <div class="data">
+                            <dt>Password:</dt> 
+                            <dd>********</dd>
+                        </div>
+                    </div>
+                </div>
+            </div>      
+        </div>
+    </div>
+{% endblock %}

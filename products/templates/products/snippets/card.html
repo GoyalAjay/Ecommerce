@@ -1,0 +1,37 @@
+{% load static %}
+<div class="card mb-4 mx-auto">
+    <a href="{{ instance.get_absolute_url }}">
+        <div class="border-bottom card-heading">
+            {% if instance.image %}
+                <img src="{{ instance.image.url }}" class="card-img-top" alt="{{ instance.title }}">
+            {% else %}
+                <img src="{% static 'img/no_image.jpg' %}" class="img-fluid card-img-top" alt="{{ instance.title }}">
+                    </a>
+            {% endif %}
+        </div>
+    </a>
+    <div class="card-body">
+
+        {% if instance.product_by %}
+            <a class="mb-0 card-title h6 d-inline-block text-truncate text-dark text-decoration-none" href="{{ instance.get_absolute_url }}"  data-toggle="tooltip" data-placement="top" title="{{ instance.title }}">
+                {{ instance.title }}
+            </a>
+            <p>
+                by&nbsp;<a class="product_by text-decoration-none" href="{{ instance.product_by_url }}">{{ instance.product_by }}</a>
+            </p>
+        {% else %}
+            <a class="card-title h6 d-inline-block text-truncate text-dark text-decoration-none" href="{{ instance.get_absolute_url }}"  data-toggle="tooltip" data-placement="top" title="{{ instance.title }}">
+                {{ instance.title }}
+            </a>
+        {% endif %}
+        <p class="card-text">&#8377;{{ instance.price }}</p>
+        <div class="row no-gutters">
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
+                <a href="{{ instance.get_absolute_url }}" class="btn btn-primary card-button">Quick View</a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                {% include 'products/snippets/update-cart.html' with product=instance cart=cart %}
+            </div>
+        </div>
+    </div>
+</div>
