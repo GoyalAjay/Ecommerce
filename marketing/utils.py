@@ -1,11 +1,7 @@
-#Superuser: ajayrocks.goyal3@gmail.com
-#password: lucas@1411 or Lucas@1411
-
 import hashlib
 import json
 import requests, re
 from django.conf import settings
-#from mailchimp_marketing import Client
 
 MAILCHIMP_API_KEY           = getattr(settings, "MAILCHIMP_API_KEY", None)
 MAILCHIMP_DATA_CENTER       = getattr(settings, "MAILCHIMP_DATA_CENTER", None)
@@ -60,14 +56,6 @@ class Mailchimp(object):
         return status
 
     def add_email(self, email):
-        # status="subscribed"
-        # self.check_valid_status(status)
-        # data = {
-        #     "email_address": email,
-        #     "status": status
-        # }
-        # endpoint = self.get_members_endpoint()
-        # r = requests.post(endpoint, auth=("",self.key), data=json.dumps(data))
         return self.change_subscription_status(email, status="subscribed")
 
     def unsubscribe(self, email):

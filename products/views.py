@@ -25,9 +25,6 @@ class ProductFeaturedDetailView(ObjectViewedMixin, DetailView):
     queryset = Product.objects.all().featured()
     template_name = "products/featured-detail.html"
 
-    # def get_queryset(self, *args, **kwargs):
-    #     request = self.request
-    #     return Product.objects.featured()
 
 class UserProductHistoryView(LoginRequiredMixin, ListView):
     template_name = "products/user-product-history.html"
@@ -51,10 +48,6 @@ class ProductListView(ListView):
 	# queryset = Product.objects.all()
     template_name = "products/product_list.html"
 
-	# def get_context_data(self, *args, **kwargs):
-	# 	context = super(ProductListView, self).get_context_data(*args, **kwargs)
-	# 	print(context)
-	# 	return context
     def get_context_data(self, *args, **kwargs):
         context = super(ProductListView, self).get_context_data(*args, **kwargs)
         cart_obj, new_obj = Cart.objects.new_or_get(self.request)
