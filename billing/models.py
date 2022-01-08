@@ -9,7 +9,7 @@ User = settings.AUTH_USER_MODEL
 # Create your models here.
 
 import stripe
-STRIPE_SECRET_KEY = getattr(settings, "STRIPE_SECRET_KEY", "sk_test_51HI8gRIEBArkPqGJIk1s959NCXVDOnfZGEEjwxlrbjKXmAVrNPAC7F6KgTvVKPmfzdcigjsMvxPeoaHoDtzyNeBI00vjqLP3nZ")
+STRIPE_SECRET_KEY = getattr(settings, "STRIPE_SECRET_KEY")
 stripe.api_key = STRIPE_SECRET_KEY
 
 

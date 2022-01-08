@@ -32,11 +32,11 @@ EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
 EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL = "Eshoppers <info.mail.eshoppers@gmail.com>"
+DEFAULT_FROM_EMAIL = "YOUR_WEBSITE_EMAIL_ID"
 BASE_URL = 'https://eshoppers.herokuapp.com'
 
 MANAGERS = [
-        ("Ajay Goyal", "ajayrocks.goyal3@gmail.com"),
+        ("MANAGER_NAME", "MANAGER_EMAIL_ID"),   #could be your name and email too
     ]
 
 ADMINS = MANAGERS
